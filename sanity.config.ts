@@ -71,6 +71,7 @@ export default defineConfig({
             S.divider(),
             S.documentTypeListItem("artist").title("🎨 Artists"),
             S.documentTypeListItem("artwork").title("🖼️ Artworks"),
+            S.documentTypeListItem("artworkType").title("🏷️ Artwork Types"),
             S.divider(),
             S.listItem()
               .title("⚙️ Site Settings")

@@ -15,10 +15,13 @@ export const artwork = defineType({
       name: "slug",
       title: "Slug",
       type: "slug",
+      description:
+        "The artwork's page address. Click Generate if this is empty — without it the piece cannot appear on the site.",
       options: {
         source: "title",
         maxLength: 96,
       },
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "artist",
@@ -26,6 +29,16 @@ export const artwork = defineType({
       type: "reference",
       to: [{ type: "artist" }],
       validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "artworkType",
+      title: "Artwork Type",
+      type: "reference",
+      to: [{ type: "artworkType" }],
+      description:
+        'The category this piece is filtered by on the gallery. Keep "Medium" for the free-text detail, e.g. "Acrylic on Canvas, framed".',
+      validation: (rule) =>
+        rule.required().warning("Set a type so this piece can be filtered on the gallery"),
     }),
     defineField({
       name: "image",
@@ -106,8 +119,16 @@ export const artwork = defineType({
   preview: {
     select: {
       title: "title",
-      subtitle: "artist.name",
+      artist: "artist.name",
+      artworkType: "artworkType.title",
       media: "image",
+    },
+    prepare({ title, artist, artworkType, media }) {
+      return {
+        title,
+        subtitle: [artist, artworkType].filter(Boolean).join("  ·  "),
+        media,
+      };
     },
   },
 });

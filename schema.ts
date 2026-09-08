@@ -1,6 +1,7 @@
 import type { SchemaTypeDefinition } from "sanity";
 import { artist } from "./schemas/artist";
 import { artwork } from "./schemas/artwork";
+import { artworkType } from "./schemas/artworkType";
 import { homePage } from "./schemas/homePage";
 import { galleryPage } from "./schemas/galleryPage";
 import { artistsPage } from "./schemas/artistsPage";
@@ -18,6 +19,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     contactPage,
     artist,
     artwork,
+    artworkType,
     siteSettings,
     seo,
   ],
