@@ -70,16 +70,21 @@ Four cannot be determined either way and are left unset for you to pick in the
 Studio: Balancing Boulders, Fish At Play, Tidal Remants (Chris Huber Fine Art)
 and Cleveland Point Lighthouse (Grayden Wallace Scott).
 
-## Optional: tidy the untyped slugs
+## Slug normalisation
 
-Eleven artworks have slugs with spaces and capitals, so they serve at URLs like
-`/gallery/Aussie%20Outlook/`. `--normalise-slugs` rewrites them and prints the
-301s to add to `website-astro/public/_redirects`. It is opt-in because it changes
-live URLs — only run it together with those redirects.
+`normalise-slugs.mjs` rewrites any artwork or artist slug that is not
+lowercase-hyphenated, and writes the matching 301s into
+`website-astro/public/_redirects` (preserving any hand-written rules there).
 
 ```bash
-SANITY_WRITE_TOKEN=sk... node scripts/migrate-artwork-types.mjs --apply --normalise-slugs
+node scripts/normalise-slugs.mjs                     # dry run
+SANITY_WRITE_TOKEN=sk... node scripts/normalise-slugs.mjs --apply
 ```
+
+Both schemas now use `schemas/lib/slugify.ts`, so the Generate button and any
+typed value are forced to that shape and this should not recur. The
+`--normalise-slugs` flag on `migrate-artwork-types.mjs` predates this script and
+only covers artworks; prefer this one.
 
 ## Note on the frontend
 

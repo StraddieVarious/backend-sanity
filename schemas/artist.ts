@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import { slugOptions } from "./lib/slugify";
 
 export const artist = defineType({
   name: "artist",
@@ -15,10 +16,7 @@ export const artist = defineType({
       name: "slug",
       title: "Slug",
       type: "slug",
-      options: {
-        source: "name",
-        maxLength: 96,
-      },
+      options: slugOptions("name"),
       validation: (rule) => rule.required(),
     }),
     defineField({

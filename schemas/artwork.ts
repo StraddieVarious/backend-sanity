@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import { slugOptions } from "./lib/slugify";
 
 export const artwork = defineType({
   name: "artwork",
@@ -17,10 +18,7 @@ export const artwork = defineType({
       type: "slug",
       description:
         "The artwork's page address. Click Generate if this is empty — without it the piece cannot appear on the site.",
-      options: {
-        source: "title",
-        maxLength: 96,
-      },
+      options: slugOptions("title"),
       validation: (rule) => rule.required(),
     }),
     defineField({
