@@ -13,6 +13,30 @@ export const siteSettings = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: "theme",
+      title: "Colours",
+      type: "theme",
+      description:
+        "Change the site's colours. Presets are pre-checked for readability; custom colours are checked before they can be published.",
+    }),
+    defineField({
+      name: "newsletter",
+      title: "Mailing list signup",
+      type: "object",
+      description: "Shown after the gallery grid and in the footer.",
+      fields: [
+        defineField({ name: "heading", title: "Heading", type: "string", initialValue: "New work, most weeks" }),
+        defineField({
+          name: "blurb",
+          title: "Short description",
+          type: "text",
+          rows: 2,
+          initialValue: "The collection changes constantly. One short email when something new arrives, and nothing else.",
+        }),
+        defineField({ name: "buttonLabel", title: "Button", type: "string", initialValue: "Join" }),
+      ],
+    }),
+    defineField({
       name: "defaultOgImage",
       title: "Default Open Graph Image",
       type: "image",

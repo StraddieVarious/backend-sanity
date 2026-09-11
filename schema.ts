@@ -9,6 +9,7 @@ import { aboutPage } from "./schemas/aboutPage";
 import { contactPage } from "./schemas/contactPage";
 import { siteSettings } from "./schemas/siteSettings";
 import { seo } from "./schemas/objects/seo";
+import { theme } from "./schemas/objects/theme";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -22,5 +23,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     artworkType,
     siteSettings,
     seo,
+    theme,
   ],
 };
