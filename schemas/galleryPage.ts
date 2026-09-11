@@ -13,6 +13,12 @@ export const galleryPage = defineType({
       description: "Main heading for the gallery page",
     }),
     defineField({
+      name: "eyebrow",
+      title: "Small label above the title",
+      type: "string",
+      initialValue: "The Collection",
+    }),
+    defineField({
       name: "heroSubtitle",
       title: "Hero Subtitle",
       type: "text",
@@ -40,6 +46,7 @@ export const galleryPage = defineType({
       title: "Call to Action Section",
       type: "object",
       fields: [
+        defineField({ name: "eyebrow", title: "Small label", type: "string", initialValue: "Enquiries" }),
         defineField({
           name: "heading",
           title: "Heading",
@@ -60,6 +67,18 @@ export const galleryPage = defineType({
           type: "string",
           initialValue: "Get in Touch",
         }),
+      ],
+    }),
+    defineField({
+      name: "artworkPage",
+      title: "Artwork page buttons",
+      type: "object",
+      description: "Buttons shown beside the price on every artwork's own page.",
+      fields: [
+        defineField({ name: "enquireLabel", title: "Enquire button", type: "string", initialValue: "Enquire about this work" }),
+        defineField({ name: "callLabel", title: "Call button", type: "string", initialValue: "Call the gallery" }),
+        defineField({ name: "soldLabel", title: "Button on a sold work", type: "string", initialValue: "See available work" }),
+        defineField({ name: "moreLabel", title: "Link to the artist's other work", type: "string", initialValue: "All work" }),
       ],
     }),
     defineField({

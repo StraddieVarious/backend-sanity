@@ -13,6 +13,12 @@ export const contactPage = defineType({
       description: "Main heading for the contact page",
     }),
     defineField({
+      name: "eyebrow",
+      title: "Small label above the title",
+      type: "string",
+      initialValue: "Raby Bay Harbour · Cleveland",
+    }),
+    defineField({
       name: "heroSubtitle",
       title: "Hero Subtitle",
       type: "text",

@@ -13,6 +13,12 @@ export const artistsPage = defineType({
       description: "Main heading for the artists page",
     }),
     defineField({
+      name: "eyebrow",
+      title: "Small label above the title",
+      type: "string",
+      initialValue: "Represented",
+    }),
+    defineField({
       name: "heroSubtitle",
       title: "Hero Subtitle",
       type: "text",
@@ -33,6 +39,7 @@ export const artistsPage = defineType({
       title: "Indigenous Artists Section",
       type: "object",
       fields: [
+        defineField({ name: "eyebrow", title: "Small label", type: "string", initialValue: "Quandamooka Country and beyond" }),
         defineField({
           name: "heading",
           title: "Section Heading",
@@ -54,6 +61,7 @@ export const artistsPage = defineType({
       title: "Call to Action Section",
       type: "object",
       fields: [
+        defineField({ name: "eyebrow", title: "Small label", type: "string", initialValue: "Submissions" }),
         defineField({
           name: "heading",
           title: "Heading",
@@ -74,6 +82,27 @@ export const artistsPage = defineType({
           type: "string",
           initialValue: "Get in Touch",
         }),
+      ],
+    }),
+    defineField({
+      name: "artistPage",
+      title: "Each artist's page",
+      type: "object",
+      description: "Wording shared by every individual artist page.",
+      fields: [
+        defineField({ name: "indigenousLabel", title: "Label for Indigenous artists", type: "string", initialValue: "Indigenous artist" }),
+        defineField({ name: "bioLabel", title: "Biography download button", type: "string", initialValue: "Artist biography (download)" }),
+        defineField({ name: "ctaEyebrow", title: "Enquiry section label", type: "string", initialValue: "Enquiries" }),
+        defineField({
+          name: "ctaHeading",
+          title: "Enquiry section heading",
+          type: "string",
+          description: "Use {name} where the artist's name should appear.",
+          initialValue: "Interested in {name}’s work?",
+        }),
+        defineField({ name: "ctaText", title: "Enquiry section text", type: "text", rows: 2, initialValue: "Visit us at Raby Bay Harbour, or get in touch about availability." }),
+        defineField({ name: "primaryLabel", title: "Main button", type: "string", initialValue: "Contact the gallery" }),
+        defineField({ name: "secondaryLabel", title: "Second button", type: "string", initialValue: "Browse the collection" }),
       ],
     }),
     defineField({

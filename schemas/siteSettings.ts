@@ -13,6 +13,14 @@ export const siteSettings = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: "header",
+      title: "Header",
+      type: "object",
+      fields: [
+        defineField({ name: "ctaLabel", title: "Button in the header", type: "string", initialValue: "Plan your visit" }),
+      ],
+    }),
+    defineField({
       name: "theme",
       title: "Colours",
       type: "theme",

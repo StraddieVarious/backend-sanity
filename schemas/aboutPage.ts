@@ -12,6 +12,7 @@ export const aboutPage = defineType({
       initialValue: "About Us",
       description: "Main heading for the about page",
     }),
+    defineField({ name: "eyebrow", title: "Small label above the title", type: "string", initialValue: "Since 2018" }),
     defineField({
       name: "heroSubtitle",
       title: "Hero Subtitle",
@@ -28,6 +29,7 @@ export const aboutPage = defineType({
       description:
         "Optional: Upload a custom hero background image. If not set, uses the default teal gradient.",
     }),
+    defineField({ name: "storyLabel", title: "Label beside the story", type: "string", initialValue: "Our story" }),
     defineField({
       name: "mainContent",
       title: "Main Content",
@@ -54,6 +56,8 @@ export const aboutPage = defineType({
       ],
       description: "Images showcasing the gallery space",
     }),
+    defineField({ name: "interiorLabel", title: "Label beside the gallery photos", type: "string", initialValue: "Inside" }),
+    defineField({ name: "interiorCaption", title: "Line under that label", type: "string", initialValue: "The space at Raby Bay Harbour." }),
     defineField({
       name: "interiorImages",
       title: "Gallery Interior Photos",
@@ -100,6 +104,8 @@ export const aboutPage = defineType({
       type: "object",
       description: "Showcase a specific artwork at the top of the about page.",
       fields: [
+        defineField({ name: "eyebrow", title: "Small label", type: "string", initialValue: "On the wall" }),
+        defineField({ name: "buttonLabel", title: "Button", type: "string", initialValue: "View this work" }),
         defineField({
           name: "artwork",
           title: "Artwork",
@@ -116,6 +122,7 @@ export const aboutPage = defineType({
         }),
       ],
     }),
+    defineField({ name: "awardsLabel", title: "Label beside the awards", type: "string", initialValue: "Recognition" }),
     defineField({
       name: "awards",
       title: "Awards",
@@ -151,6 +158,19 @@ export const aboutPage = defineType({
         },
       ],
       description: "Awards won by the gallery.",
+    }),
+    defineField({
+      name: "visitCta",
+      title: "Visit section",
+      type: "object",
+      description: "The panel at the foot of the About page.",
+      fields: [
+        defineField({ name: "eyebrow", title: "Small label", type: "string", initialValue: "Visit" }),
+        defineField({ name: "heading", title: "Heading", type: "string", initialValue: "Come and see the work in person" }),
+        defineField({ name: "text", title: "Text", type: "text", rows: 2, initialValue: "The gallery is at Raby Bay Harbour, Cleveland. Opening hours and directions are on the visit page." }),
+        defineField({ name: "primaryLabel", title: "Main button", type: "string", initialValue: "Plan your visit" }),
+        defineField({ name: "secondaryLabel", title: "Second button", type: "string", initialValue: "Browse the collection" }),
+      ],
     }),
     defineField({
       name: "seo",
