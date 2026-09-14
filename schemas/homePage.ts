@@ -21,10 +21,11 @@ export const homePage = defineType({
     }),
     defineField({
       name: "heroBackgroundImage",
-      title: "Hero Background Image",
+      title: "Banner fallback image",
       type: "image",
       options: { hotspot: true },
-      description: "Upload a hero background image. If not set, uses the default shop front image.",
+      description:
+        "Only used if the banner has no artwork to show, which would mean the gallery has no artwork on the site at all. Normally leave this alone.",
     }),
     defineField({
       name: "banner",
@@ -33,6 +34,22 @@ export const homePage = defineType({
       description: "Wording around the home page banner. The artwork shown is always the newest one added.",
       fields: [
         defineField({ name: "eyebrow", title: "Small label above the title", type: "string", initialValue: "Raby Bay Harbour · Cleveland" }),
+        defineField({
+          name: "artwork",
+          title: "Artwork in the banner",
+          type: "reference",
+          to: [{ type: "artwork" }],
+          description:
+            "Choose which work fills the banner. Leave empty and it always shows the most recently added work.",
+        }),
+        defineField({
+          name: "image",
+          title: "Use a different picture instead",
+          type: "image",
+          options: { hotspot: true },
+          description:
+            "Optional. Overrides the artwork's own picture, for example a photo of the gallery. The caption and link still point at the chosen work.",
+        }),
         defineField({ name: "primaryLabel", title: "Main button", type: "string", initialValue: "View the collection" }),
         defineField({ name: "secondaryLabel", title: "Second button", type: "string", initialValue: "Plan your visit" }),
         defineField({ name: "newestLabel", title: "Label on the artwork", type: "string", initialValue: "Just arrived" }),
