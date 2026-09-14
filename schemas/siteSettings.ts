@@ -4,9 +4,16 @@ export const siteSettings = defineType({
   name: "siteSettings",
   title: "Site Settings",
   type: "document",
+  groups: [
+    { name: "general", title: "General", default: true },
+    { name: "social", title: "Social & newsletter" },
+    { name: "seo", title: "Search & sharing" },
+    { name: "footer", title: "Footer" },
+  ],
   fields: [
     defineField({
       name: "siteName",
+      group: "general",
       title: "Site Name",
       type: "string",
       description: "Used as a fallback in meta titles",
@@ -14,6 +21,7 @@ export const siteSettings = defineType({
     }),
     defineField({
       name: "header",
+      group: "general",
       title: "Header",
       type: "object",
       fields: [
@@ -22,6 +30,7 @@ export const siteSettings = defineType({
     }),
     defineField({
       name: "theme",
+      group: "general",
       title: "Colours",
       type: "theme",
       description:
@@ -29,6 +38,7 @@ export const siteSettings = defineType({
     }),
     defineField({
       name: "newsletter",
+      group: "social",
       title: "Mailing list signup",
       type: "object",
       description: "Shown after the gallery grid and in the footer.",
@@ -46,6 +56,7 @@ export const siteSettings = defineType({
     }),
     defineField({
       name: "defaultOgImage",
+      group: "seo",
       title: "Default Open Graph Image",
       type: "image",
       description: "Fallback image for social media sharing (1200x630px recommended)",
@@ -55,6 +66,7 @@ export const siteSettings = defineType({
     }),
     defineField({
       name: "socialLinks",
+      group: "social",
       title: "Social Media Links",
       type: "object",
       fields: [
@@ -72,6 +84,7 @@ export const siteSettings = defineType({
     }),
     defineField({
       name: "structuredData",
+      group: "seo",
       title: "Local SEO / Structured Data",
       type: "object",
       description: "Used for Google structured data (rich results & local search)",
@@ -138,6 +151,7 @@ export const siteSettings = defineType({
     }),
     defineField({
       name: "footer",
+      group: "footer",
       title: "Footer",
       type: "object",
       fields: [

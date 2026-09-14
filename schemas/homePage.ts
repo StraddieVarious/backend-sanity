@@ -4,16 +4,23 @@ export const homePage = defineType({
   name: "homePage",
   title: "Home Page",
   type: "document",
+  groups: [
+    { name: "top", title: "Banner", default: true },
+    { name: "sections", title: "Page sections" },
+    { name: "seo", title: "Search & sharing" },
+  ],
   fields: [
     defineField({
       name: "heroTitle",
-      title: "Hero Title",
+      group: "top",
+      title: "Banner heading",
       type: "string",
       initialValue: "Welcome",
     }),
     defineField({
       name: "heroSubtitle",
-      title: "Hero Subtitle",
+      group: "top",
+      title: "Banner text",
       type: "text",
       rows: 2,
       initialValue:
@@ -21,6 +28,7 @@ export const homePage = defineType({
     }),
     defineField({
       name: "heroBackgroundImage",
+      group: "top",
       title: "Banner fallback image",
       type: "image",
       options: { hotspot: true },
@@ -29,9 +37,10 @@ export const homePage = defineType({
     }),
     defineField({
       name: "banner",
+      group: "top",
       title: "Banner",
       type: "object",
-      description: "Wording around the home page banner. The artwork shown is always the newest one added.",
+      description: "Buttons and wording on the banner. Choose which artwork it shows below.",
       fields: [
         defineField({ name: "eyebrow", title: "Small label above the title", type: "string", initialValue: "Raby Bay Harbour · Cleveland" }),
         defineField({
@@ -57,6 +66,7 @@ export const homePage = defineType({
     }),
     defineField({
       name: "standing",
+      group: "sections",
       title: "Awards and numbers band",
       type: "object",
       description: "The dark band under the banner. The numbers are counted automatically; awards come from the About page.",
@@ -68,6 +78,7 @@ export const homePage = defineType({
     }),
     defineField({
       name: "aboutPreview",
+      group: "sections",
       title: "About Preview Section",
       type: "object",
       description: "The 'About the Gallery' section shown on the homepage.",
@@ -112,6 +123,7 @@ export const homePage = defineType({
     }),
     defineField({
       name: "featuredSection",
+      group: "sections",
       title: "Featured Artworks Section",
       type: "object",
       description: "Customise the heading and subtitle for the featured artworks grid.",
@@ -139,6 +151,7 @@ export const homePage = defineType({
     }),
     defineField({
       name: "makersSection",
+      group: "sections",
       title: "Artists Section",
       type: "object",
       description: "The row of artists on the home page.",
@@ -158,6 +171,7 @@ export const homePage = defineType({
     }),
     defineField({
       name: "whatsNew",
+      group: "sections",
       title: "What's New Section",
       type: "object",
       description: "Feature an artwork on the homepage. Select an artwork and it will automatically pull through the image, title, and artist with a link to the full artwork page.",
@@ -189,6 +203,7 @@ export const homePage = defineType({
     }),
     defineField({
       name: "seo",
+      group: "seo",
       title: "SEO",
       type: "seo",
       description: "SEO settings for the homepage",

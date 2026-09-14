@@ -4,23 +4,31 @@ export const artistsPage = defineType({
   name: "artistsPage",
   title: "Artists Page",
   type: "document",
+  groups: [
+    { name: "top", title: "Top of the page", default: true },
+    { name: "sections", title: "Page sections" },
+    { name: "seo", title: "Search & sharing" },
+  ],
   fields: [
     defineField({
       name: "heroTitle",
-      title: "Hero Title",
+      group: "top",
+      title: "Page heading",
       type: "string",
       initialValue: "Meet Our Artists",
       description: "Main heading for the artists page",
     }),
     defineField({
       name: "eyebrow",
+      group: "top",
       title: "Small label above the title",
       type: "string",
       initialValue: "Represented",
     }),
     defineField({
       name: "heroSubtitle",
-      title: "Hero Subtitle",
+      group: "top",
+      title: "Intro text",
       type: "text",
       rows: 2,
       initialValue: "Discover the talented creators behind the artwork",
@@ -28,7 +36,8 @@ export const artistsPage = defineType({
     }),
     defineField({
       name: "heroBackgroundImage",
-      title: "Hero Background Image",
+      group: "top",
+      title: "Background picture",
       type: "image",
       options: { hotspot: true },
       description:
@@ -36,6 +45,7 @@ export const artistsPage = defineType({
     }),
     defineField({
       name: "indigenousSection",
+      group: "sections",
       title: "Indigenous Artists Section",
       type: "object",
       fields: [
@@ -58,6 +68,7 @@ export const artistsPage = defineType({
     }),
     defineField({
       name: "ctaSection",
+      group: "sections",
       title: "Call to Action Section",
       type: "object",
       fields: [
@@ -86,6 +97,7 @@ export const artistsPage = defineType({
     }),
     defineField({
       name: "artistPage",
+      group: "sections",
       title: "Each artist's page",
       type: "object",
       description: "Wording shared by every individual artist page.",
@@ -107,6 +119,7 @@ export const artistsPage = defineType({
     }),
     defineField({
       name: "seo",
+      group: "seo",
       title: "SEO",
       type: "seo",
       description: "SEO settings for the artists page",

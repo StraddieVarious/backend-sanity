@@ -4,23 +4,31 @@ export const contactPage = defineType({
   name: "contactPage",
   title: "Contact Page",
   type: "document",
+  groups: [
+    { name: "top", title: "Top of the page", default: true },
+    { name: "sections", title: "Contact details" },
+    { name: "seo", title: "Search & sharing" },
+  ],
   fields: [
     defineField({
       name: "heroTitle",
-      title: "Hero Title",
+      group: "top",
+      title: "Page heading",
       type: "string",
       initialValue: "Contact Us",
       description: "Main heading for the contact page",
     }),
     defineField({
       name: "eyebrow",
+      group: "top",
       title: "Small label above the title",
       type: "string",
       initialValue: "Raby Bay Harbour · Cleveland",
     }),
     defineField({
       name: "heroSubtitle",
-      title: "Hero Subtitle",
+      group: "top",
+      title: "Intro text",
       type: "text",
       rows: 2,
       initialValue: "Please use the form below to get in touch",
@@ -28,7 +36,8 @@ export const contactPage = defineType({
     }),
     defineField({
       name: "heroBackgroundImage",
-      title: "Hero Background Image",
+      group: "top",
+      title: "Background picture",
       type: "image",
       options: { hotspot: true },
       description:
@@ -36,6 +45,7 @@ export const contactPage = defineType({
     }),
     defineField({
       name: "formHeading",
+      group: "sections",
       title: "Contact Form Heading",
       type: "string",
       initialValue: "Send us a message",
@@ -43,6 +53,7 @@ export const contactPage = defineType({
     }),
     defineField({
       name: "openingHours",
+      group: "sections",
       title: "Opening Hours",
       type: "text",
       rows: 6,
@@ -50,11 +61,13 @@ export const contactPage = defineType({
     }),
     defineField({
       name: "phone",
+      group: "sections",
       title: "Phone Number",
       type: "string",
     }),
     defineField({
       name: "email",
+      group: "sections",
       title: "Email Address",
       type: "string",
       validation: (rule) =>
@@ -66,12 +79,14 @@ export const contactPage = defineType({
     }),
     defineField({
       name: "address",
+      group: "sections",
       title: "Physical Address",
       type: "text",
       rows: 3,
     }),
     defineField({
       name: "googleMapsUrl",
+      group: "sections",
       title: "Google Maps Embed URL",
       type: "url",
       description:
@@ -79,6 +94,7 @@ export const contactPage = defineType({
     }),
     defineField({
       name: "seo",
+      group: "seo",
       title: "SEO",
       type: "seo",
       description: "SEO settings for the contact page",

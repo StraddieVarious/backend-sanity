@@ -4,10 +4,16 @@ export const aboutPage = defineType({
   name: "aboutPage",
   title: "About Page",
   type: "document",
+  groups: [
+    { name: "top", title: "Top of the page", default: true },
+    { name: "sections", title: "Page sections" },
+    { name: "seo", title: "Search & sharing" },
+  ],
   fields: [
     defineField({
       name: "heroTitle",
-      title: "Hero Title",
+      group: "top",
+      title: "Page heading",
       type: "string",
       initialValue: "About Us",
       description: "Main heading for the about page",
@@ -15,7 +21,8 @@ export const aboutPage = defineType({
     defineField({ name: "eyebrow", title: "Small label above the title", type: "string", initialValue: "Since 2018" }),
     defineField({
       name: "heroSubtitle",
-      title: "Hero Subtitle",
+      group: "top",
+      title: "Intro text",
       type: "text",
       rows: 2,
       initialValue: "Learn about our gallery and mission",
@@ -23,7 +30,8 @@ export const aboutPage = defineType({
     }),
     defineField({
       name: "heroBackgroundImage",
-      title: "Hero Background Image",
+      group: "top",
+      title: "Background picture",
       type: "image",
       options: { hotspot: true },
       description:
@@ -32,6 +40,7 @@ export const aboutPage = defineType({
     defineField({ name: "storyLabel", title: "Label beside the story", type: "string", initialValue: "Our story" }),
     defineField({
       name: "mainContent",
+      group: "sections",
       title: "Main Content",
       type: "array",
       of: [{ type: "block" }],
@@ -39,6 +48,7 @@ export const aboutPage = defineType({
     }),
     defineField({
       name: "galleryImages",
+      group: "sections",
       title: "Gallery Images",
       type: "array",
       of: [
@@ -60,6 +70,7 @@ export const aboutPage = defineType({
     defineField({ name: "interiorCaption", title: "Line under that label", type: "string", initialValue: "The space at Raby Bay Harbour." }),
     defineField({
       name: "interiorImages",
+      group: "sections",
       title: "Gallery Interior Photos",
       type: "array",
       of: [
@@ -81,6 +92,7 @@ export const aboutPage = defineType({
     }),
     defineField({
       name: "missionStatement",
+      group: "sections",
       title: "Mission Statement",
       type: "object",
       fields: [
@@ -100,6 +112,7 @@ export const aboutPage = defineType({
     }),
     defineField({
       name: "featuredArtwork",
+      group: "sections",
       title: "Featured Artwork",
       type: "object",
       description: "Showcase a specific artwork at the top of the about page.",
@@ -125,6 +138,7 @@ export const aboutPage = defineType({
     defineField({ name: "awardsLabel", title: "Label beside the awards", type: "string", initialValue: "Recognition" }),
     defineField({
       name: "awards",
+      group: "sections",
       title: "Awards",
       type: "array",
       of: [
@@ -161,6 +175,7 @@ export const aboutPage = defineType({
     }),
     defineField({
       name: "visitCta",
+      group: "sections",
       title: "Visit section",
       type: "object",
       description: "The panel at the foot of the About page.",
@@ -174,6 +189,7 @@ export const aboutPage = defineType({
     }),
     defineField({
       name: "seo",
+      group: "seo",
       title: "SEO",
       type: "seo",
       description: "SEO settings for the about page",

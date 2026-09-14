@@ -4,23 +4,31 @@ export const galleryPage = defineType({
   name: "galleryPage",
   title: "Gallery Page",
   type: "document",
+  groups: [
+    { name: "top", title: "Top of the page", default: true },
+    { name: "sections", title: "Page sections" },
+    { name: "seo", title: "Search & sharing" },
+  ],
   fields: [
     defineField({
       name: "heroTitle",
-      title: "Hero Title",
+      group: "top",
+      title: "Page heading",
       type: "string",
       initialValue: "Gallery",
       description: "Main heading for the gallery page",
     }),
     defineField({
       name: "eyebrow",
+      group: "top",
       title: "Small label above the title",
       type: "string",
       initialValue: "The Collection",
     }),
     defineField({
       name: "heroSubtitle",
-      title: "Hero Subtitle",
+      group: "top",
+      title: "Intro text",
       type: "text",
       rows: 2,
       initialValue: "Please come and see the beautiful artwork in our gallery",
@@ -28,7 +36,8 @@ export const galleryPage = defineType({
     }),
     defineField({
       name: "heroBackgroundImage",
-      title: "Hero Background Image",
+      group: "top",
+      title: "Background picture",
       type: "image",
       options: { hotspot: true },
       description:
@@ -36,6 +45,7 @@ export const galleryPage = defineType({
     }),
     defineField({
       name: "introText",
+      group: "sections",
       title: "Introduction Text",
       type: "array",
       of: [{ type: "block" }],
@@ -43,6 +53,7 @@ export const galleryPage = defineType({
     }),
     defineField({
       name: "ctaSection",
+      group: "sections",
       title: "Call to Action Section",
       type: "object",
       fields: [
@@ -71,6 +82,7 @@ export const galleryPage = defineType({
     }),
     defineField({
       name: "artworkPage",
+      group: "sections",
       title: "Artwork page buttons",
       type: "object",
       description: "Buttons shown beside the price on every artwork's own page.",
@@ -83,6 +95,7 @@ export const galleryPage = defineType({
     }),
     defineField({
       name: "seo",
+      group: "seo",
       title: "SEO",
       type: "seo",
       description: "SEO settings for the gallery page",
