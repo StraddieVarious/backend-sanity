@@ -175,23 +175,6 @@ export const siteSettings = defineType({
           rows: 3,
           description: "Displayed above the copyright line in the footer",
         }),
-        defineField({
-          name: "designCredit",
-          title: "Design Credit Text",
-          type: "string",
-          description: 'e.g. "Designed for speed by"',
-        }),
-        defineField({
-          name: "designCreditName",
-          title: "Design Credit Name",
-          type: "string",
-          description: 'e.g. "Spherify Pty Ltd"',
-        }),
-        defineField({
-          name: "designCreditUrl",
-          title: "Design Credit URL",
-          type: "url",
-        }),
       ],
     }),
   ],
