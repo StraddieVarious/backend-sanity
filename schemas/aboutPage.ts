@@ -46,26 +46,6 @@ export const aboutPage = defineType({
       of: [{ type: "block" }],
       description: "Main content for the about page",
     }),
-    defineField({
-      name: "galleryImages",
-      group: "sections",
-      title: "Gallery Images",
-      type: "array",
-      of: [
-        {
-          type: "image",
-          options: { hotspot: true },
-          fields: [
-            {
-              name: "caption",
-              type: "string",
-              title: "Caption",
-            },
-          ],
-        },
-      ],
-      description: "Images showcasing the gallery space",
-    }),
     defineField({ name: "interiorLabel", title: "Label beside the gallery photos", type: "string", initialValue: "Inside" }),
     defineField({ name: "interiorCaption", title: "Line under that label", type: "string", initialValue: "The space at Raby Bay Harbour." }),
     defineField({

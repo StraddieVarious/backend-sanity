@@ -103,13 +103,6 @@ export const homePage = defineType({
           initialValue: "Step into Straddievarious Gallery and experience the heart of Redlands creativity. Located at Raby Bay Harbourside, the gallery showcases a diverse and ever-changing collection of works by artists and artisans from North Stradbroke Island (Minjerrabah), the Bay Islands, and the mainland Redlands Coast.",
         }),
         defineField({
-          name: "secondParagraph",
-          title: "Second Paragraph",
-          type: "text",
-          rows: 4,
-          initialValue: "From intricate handmade pieces to bold contemporary artworks, each creation tells a story of local talent and cultural connection.",
-        }),
-        defineField({
           name: "image",
           title: "Section Image",
           type: "image",

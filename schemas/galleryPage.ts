@@ -49,7 +49,8 @@ export const galleryPage = defineType({
       title: "Introduction Text",
       type: "array",
       of: [{ type: "block" }],
-      description: "Optional introduction text displayed above the gallery grid",
+      description:
+        "Optional words about the collection, shown below the artwork on the Gallery page. Good for describing what the gallery sells, in the words people search with.",
     }),
     defineField({
       name: "ctaSection",
