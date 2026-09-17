@@ -160,7 +160,7 @@ export const siteSettings = defineType({
           title: "Footer Description",
           type: "text",
           rows: 3,
-          description: "Short description shown below the logo. Include SEO keywords naturally.",
+          description: "Shown below the logo on every page. Leave empty to use the standard wording. If you write your own, keep the words art gallery, Cleveland and Redlands in it: Google uses this text to match local searches.",
         }),
         defineField({
           name: "showAcknowledgment",
