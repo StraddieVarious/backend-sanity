@@ -29,12 +29,12 @@ export const siteSettings = defineType({
       ],
     }),
     defineField({
-      name: "theme",
+      name: "colours",
       group: "general",
       title: "Colours",
-      type: "theme",
+      type: "siteColours",
       description:
-        "Change the site's colours. Presets are pre-checked for readability; custom colours are checked before they can be published.",
+        "Pick a colour for each numbered part of the site; the preview shows where each one goes. Any colour can be used. If text on it would be hard to read, you'll see a warning and a suggested shade, which you can use or ignore.",
     }),
     defineField({
       name: "newsletter",
